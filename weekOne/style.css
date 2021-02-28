@@ -47,7 +47,13 @@ li {
 }
 
 img{
-    max-width: 100%;
+    width: 100%;
+    max-width: 500px;
+}
+
+p{
+
+    padding: 10px;
 }
 
 /*************************
@@ -68,9 +74,9 @@ Media Queries
         padding-top: 40px;
         padding-bottom: 40px;
     }
-    .box{
+    /* .box{
         display: inline-flex;
-    }
+    } */
 
     li {
         margin: 10px;
@@ -85,6 +91,11 @@ Media Queries
     h2{
         padding: 10px;
         font-size: 28px;
+    }
+
+    ul{
+        display: flex;
+        margin: auto;
     }
 
 }
