@@ -81,6 +81,34 @@ pre code {
 
 /* ---- Navigation ---- */
 
+/* - mobile-menu - */
+#mobile-menu img{
+
+    display: block;
+    max-width: 24px;
+    margin: 10px 20px 10px 260px;
+}
+
+#mobile-menu{
+    flex-direction:column;
+    position: fixed;
+    right: 0%;
+    display: none;
+    width: 300px;
+    height: 100%;
+    font-size: 24px;
+    background: #fff;
+}
+
+#mobile-menu ul li a{
+    padding-top: 20px;
+    left: 0%;
+    display: block;
+    text-align: left;
+    padding-left: 40px;
+}
+/* - mobile-menu close- */
+
 .name {
 	font-size: 1.25em;
 	margin: 0;
@@ -126,6 +154,7 @@ pre code {
     width: 100%;
     box-shadow:0 1px 4px rgba(0, 0, 0, .4);
     top:0;
+    z-index: .99;
 }
 
 .main-header img{
@@ -193,4 +222,7 @@ Media Queries
         width:100%;
     }
 
+    .mobile-menu{
+        display: none;
+    }
 }
