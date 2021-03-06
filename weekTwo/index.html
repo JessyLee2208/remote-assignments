@@ -28,6 +28,7 @@
     </div>
     <div class="container">
       <h2 id="myHeading">Assignment List</h2>
+      <!-- 
 
       <div class="content_box">
         <ul class="box-ul">
@@ -52,6 +53,23 @@
       console.log(max(maxtest))
       console.log(max(maxtest2))
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
               </code>
             </pre>
         </li>
@@ -60,21 +78,37 @@
           <pre>
             <code>
               
-    function max(numbers){
-      // your code here, for-loop method preferred      
-      var mathmax = numbers[0];
-      for(i=1; i<numbers.length; i++){
-        if(numbers[i] > mathmax){
-        mathmax = numbers[i];
-        }
-      return mathmax;
+    function calculate(args){                           
+      let result;
+      if(args.op==="+"){ 
+        result=args.n1+args.n2;
+      }else if(args.op==="-"){ 
+        result=args.n1-args.n2;
+      }else{
+        result="Not supported";
       }
+        return result; 
     }
-
-    var maxtest=[1, 2, 4, 5];
-    var maxtest2=[5, 2, 7, 1, 6];
-    console.log(max(maxtest))
-    console.log(max(maxtest2))
+    
+    // way 1
+    let data = {
+      op:'+',
+      n1:2,
+      n2:3
+    }
+    console.log(calculate(data))
+              
+    // way 2
+    calculate({
+      op:'+',
+      n1:2,
+      n2:3
+    })
+    console.log(calculate({
+      op:'+',
+      n1:2,
+      n2:3
+    }))
 
             </code>
           </pre>
@@ -87,67 +121,136 @@
             <p>Assignment 3: Function, Array, and Object</p>
             <pre>
               <code>
-      
-      var priduct = {name:'',price:''}
-      
-      function getAvg(size,data){
-        // your code here 
-        console.log('size:3',getAvg.price)
+
+      function avg(arr) {
+        let all =0;
+        for (i=0; i &lt; arr.products.length; i++){          
+          all += arr.products[i].price
+        }
+                  
+        console.log(all / arr.products.length);
       }
-
+      avg ({
+        color:3,
+        products:[
+          {
+            name:"Product 1 ',
+            price:100
+          },{
+            name:' Product 2 ',
+            price:200
+          },{
+            name:' Product 3' ,
+            price:300
+          }]
       
-      getAvg({
-        size:3,
-        priducts:[{
-          name:"Product 1",
-          price:100
-        },{
-          name:"Product 2",
-          price:700
-        },{
-          name:"Product 3",
-          price:250
-        } ];
-
       })
-
-  
               </code>
             </pre>
           </li>
-          <li><p>Page Layout: Flexbox</p><img src='img/Page_Layout_Flexbox.png'></li>
-        </ul>
+          <li>
+            <p>Assignment 5: Algorithm Practice (Advanced Optional)</p>
+            <pre>
+              <code>
+      function twoSum(nums, target){  
+        let sum = 0;
+        for(i=0; i &lt; nums.length; i++){
+          for(j=0; j &lt; nums.length; j++){
+            sum = nums[i]+nums[j];
+            if(sum==target){
+              return [i, j]
+            }
+          }
+          
+        }
+      }
+      //twoSum([2, 7, 11, 15], 9)
+      console.log(twoSum([10, 2, 11, 7], 13))            
+
+
+
+
+
+
+
+
+
+
+              </code>
+            </pre>
+          </li>
+        </ul> -->
+
+        <div class="content_box">
+          <ul class="box-ul">
+            <li>
+              <p class='codepentitle'>Assignment 1: Function and Array</p>
+              <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="js,result" data-user="jessylee2208" data-slug-hash="jOVvBPZ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title=" Assignment 1: Function and Array">
+              <span>See the Pen <a href="https://codepen.io/jessylee2208/pen/jOVvBPZ">
+               Assignment 1: Function and Array</a> by JessyLee2208 (<a href="https://codepen.io/jessylee2208">@jessylee2208</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script></li>
+            
+            <li>
+              <p class='codepentitle'>Assignment 2: Object</p>
+              <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="js,result" data-user="jessylee2208" data-slug-hash="PobdpWm" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Assignment 2: Object">
+              <span>See the Pen <a href="https://codepen.io/jessylee2208/pen/PobdpWm">
+              Assignment 2: Object</a> by JessyLee2208 (<a href="https://codepen.io/jessylee2208">@jessylee2208</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script></li>
+          </ul>
+        </div>
+        <div class="content_box">
+          <ul class="box-ul">
+
+            <li>
+              <p class='codepentitle'>Assignment 3: Function, Array, and Object</p>
+              <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="js,result" data-user="jessylee2208" data-slug-hash="Pobdpob" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Pobdpob">
+              <span>See the Pen <a href="https://codepen.io/jessylee2208/pen/Pobdpob">
+              Pobdpob</a> by JessyLee2208 (<a href="https://codepen.io/jessylee2208">@jessylee2208</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script></li>
+
+            <li>
+              <p class='codepentitle'>Assignment 5: Algorithm Practice</p>
+              <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="js,result" data-user="jessylee2208" data-slug-hash="KKNxaLZ" style="height: 265px width:100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Assignment 5: Algorithm Practice (Advanced Optional)">
+              <span>See the Pen <a href="https://codepen.io/jessylee2208/pen/KKNxaLZ">
+              Assignment 5: Algorithm Practice (Advanced Optional)</a> by JessyLee2208 (<a href="https://codepen.io/jessylee2208">@jessylee2208</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script></li>
+          </ul>
+        </div>
       </div>  
-      <div class="content_box">
-        <ul class="box-ul">
-          <li><p>Page Layout: RWD</p><img src='img/Responsive_Layouts.png'></li>
-          <li><p>Hosting Website with GitHub Page</p><img src='img/HowtoUseGitandGitHub.png'></li>
-        </ul>
-      </div>
 
 
+    </div>
+    <input type="button" value="call to action">
+    <div class="container hidenbox">
       <h3>教學影片作業</h3>
-      <div class="content_box">
+      <div class="content_box ">
         <ul class="box-ul">
-          <li><p>HTML Basics</p><img src='img/HTML_Basics.png'></li>
-          <li><p>CSS Basics</p><img src='img/CSS_Basics_2014.png'></li>
+          <li><p>javaScrip Bassics</p><img src='img/javaScrip_Bassics.png'></li>
+          <li><p>JavaScrip Loops</p><img src='img/JavaScrip_Loops.png'></li>
         </ul>
       </div>
       <div class="content_box">
         <ul class="box-ul">
-          <li><p>Page Layout: Basics</p><img src='img/CSS_Layout_Basics.png'></li>
-          <li><p>Page Layout: Flexbox</p><img src='img/Page_Layout_Flexbox.png'></li>
+          <li><p>JavaScript and the DOM</p><img src='img/JavaScript_and_the_DOM.png'></li>
+          <li><p>JavaScript Arrays</p><img src='img/JavaScript_Arrays.png'></li>
         </ul>
       </div>  
       <div class="content_box">
         <ul class="box-ul">
-          <li><p>Page Layout: RWD</p><img src='img/Responsive_Layouts.png'></li>
-          <li><p>Hosting Website with GitHub Page</p><img src='img/HowtoUseGitandGitHub.png'></li>
+          <li><p>JavaScript Functions</p><img src='img/JavaScript_Functions.png'></li>
+          <li><p>JavaScript Objects</p><img src='img/JavaScript_Objects.png'></li>
         </ul>
       </div>
     </div>
     <script src='js.js'></script>
-    <input type="button" value="call to action">
 
   </body>
 </html>
