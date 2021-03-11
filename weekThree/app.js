@@ -25,6 +25,7 @@ app.get ('/',function(req, res){
 
 app.get('/getData', function (req, res){
     var result;
+    
     if(isNaN(req.query.number)){
         result = 'Wrong Parameter'
     } else{
@@ -32,6 +33,13 @@ app.get('/getData', function (req, res){
         result = ((1+Number(req.query.number))*Number(req.query.number))/2;
     }
     res.send(`${result}`)
+});
+
+
+app.use('/public', express.static('public'));
+
+app.get ('/sum.html',function(req, res){
+    res.sendFile( __dirname + "/" + "sum.html" );
 });
 
 //監聽3000埠
