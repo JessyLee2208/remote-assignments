@@ -24,15 +24,22 @@ app.get ('/',function(req, res){
 // });
 
 app.get('/getData', function (req, res){
-    var result;
+    var result = req.query.number;
+    console.log(result)
     
-    if(isNaN(req.query.number)){
+    if(result == undefined ){
+        result = 'Lack of Parameter'
+    } else if(isNaN(result)) {
+        //梯形公式
         result = 'Wrong Parameter'
     } else{
-        //梯形公式
-        result = ((1+Number(req.query.number))*Number(req.query.number))/2;
+        result = ((1+Number(result))*Number(result))/2;
     }
     res.send(`${result}`)
+});
+
+app.get ('/myName',function(req, res){
+    res.send('<h1>hihihih</h1>')
 });
 
 

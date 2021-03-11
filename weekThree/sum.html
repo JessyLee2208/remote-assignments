@@ -5,6 +5,7 @@
 </head>
 <body>
     <form action="http://localhost:3000/sum.html" method="GET"></form>
+
     <p>請輸入數字</p>
     <input type="text" id="Number_input">
     <button id="check_btn" onclick="sendAJAX()">check</button>
@@ -13,24 +14,36 @@
         var xhr = new XMLHttpRequest();
         
 
-        var input = document.querySelector('input');
+        // var input = document.querySelector('input');
         var button = document.querySelector('button');
         var p = document.querySelector('p');
 
+        //Assignment 3 - 3
         xhr.onreadystatechange = function() {
             
             if (xhr.readyState === 4){
                 document.getElementById('ajax').innerHTML = xhr.responseText
             }
+            
+            
         };
-        let result = '';
-        xhr.open('GET','http://localhost:3000/getData?number='+result)
+        xhr.open('GET','http://localhost:3000/getData?number=10');
+        xhr.send();
         
+        
+        let result = '';
+        
+
+        //Assignment 3 - 4
         function sendAJAX(){
-            xhr.send();
-            document.getElementById('check_btn').style.display = 'none';
-            document.getElementById('Number_input').style.display = 'none';
+            // console.log(input.value);
+            input = document.querySelector('input');
+            
+            // document.getElementById('check_btn').style.display = 'none';
+            // document.getElementById('Number_input').style.display = 'none';
             result = input.value;
+            xhr.open('GET','http://localhost:3000/getData?number='+result);
+            xhr.send();
 
         }
         
