@@ -1,32 +1,30 @@
 //匯入express模組
 var express= require('express');
-// const cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 //建立伺服器
 var app=express();
 
+app.use('/public', express.static('public'));
+
 app.set('view engine','pug');
 app.use(bodyParser.urlencoded({extended:false}));
+app.use(cookieParser());
+
 
 //伺服器位置的名稱 最後網址為http://localhost:3000/
 const hostName = 'localhost';
 const port = 3000;
 
-
+//Assignment 1: Your First Web Server
 app.get ('/',function(req, res){
     res.statusCode = 300;
     res.setHeader = ('content-Type','text/html');
     res.end('<h1> Week Three!!!</h1>')
 });
 
-// app.get ('/getData',function(req, res){
-//     res.statusCode = 300;
-//     res.end('<h1>Lack of Parameter</h1>')
-//     let number = req.query.page;
-    
-
-// });
+//Assignment 2: Build Backend API for Front-End
 
 app.get('/getData', function (req, res){
     var result = req.query.number;
@@ -44,28 +42,45 @@ app.get('/getData', function (req, res){
 });
 
 
+//Assignment 3: Connect to Backend API by AJAX
 
-
-app.use('/public', express.static('public'));
-
-app.get ('/sum.html',function(req, res){
+app.get ('/sum.html',(req, res)=> {
     res.sendFile( __dirname + "/" + "sum.html" );
 });
 
-app.get('/trackName',function(req, res){
-    res.render('app');
+
+//Assignment 4: HTTP Cookie (Advanced Optional)
+
+app.get('/trackName',(req, res)=> {
+    
+    const name = req.cookies.username
+    res.render('trackName', {name}); 
 
 });
 
-app.post('/trackName', (req, res)=> {
-    res.render('app');
-    console.dir(req.body);
-    // res.cookie('username', req.body.username)
+
+app.get('/myName',(req, res)=> {
+    const name = req.cookies.username
+
+    if(name == undefined){
+        res.render('myName', {name});
+    } else {
+        res.render('trackName', {name});
+    }
+
+});
+
+app.post('/myName',(req, res)=> {
     
+    const name = req.body.username;
+    res.cookie('username', req.body.username);
+    res.redirect('/trackName?name='+name);
     
 });
 
-// app.use('cookie',routerCookie);
+
+
+
 
 //監聽3000埠
 const server= app.listen(port, function() {
