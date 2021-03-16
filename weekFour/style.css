@@ -179,17 +179,27 @@ pre code {
 .main-header img{
 
     display: block;
-    float: left;
-    left:0;
+    float: right;
+    right:0;
     height: 100%;
     max-width: 24px;
-    margin: 10px 20px 10px 72%;
+    margin: 10px 20px 10px auto;
 }
 
+.dropdown img{
+
+    float: right;
+    right:0;
+    max-width: 26px;
+    margin: 10px ;
+}
+.dropdown ul{
+    top:40px;
+}
 
 .dropdown {
     position: absolute;
-    top: 60px;
+    top: 0px;
     right: 0;
     width: 200px;
     height: 100vh;

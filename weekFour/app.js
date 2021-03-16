@@ -2,15 +2,22 @@
 
 class Header extends React.Component {
 
+    
 
     state = {
       open: false,
+      ImgUrl: './img/ic_menu.png',
+
+
     };
+
+
     handleButtonClick = () => {
       console.log('ccc')
       this.setState(state => {
         return {
           open: !state.open,
+          
         };
       });
     };
@@ -24,7 +31,7 @@ class Header extends React.Component {
           <div className="main-header clearfix">
             <h1 className="name"><a href="#">Jessy Lee</a></h1>
 
-              <img src= './img/ic_menu.png' className="menu_open" alt='Logo' onClick={this.handleButtonClick}>
+              <img src= {this.state.ImgUrl} className="menu_open" alt='Logo' onClick={this.handleButtonClick}>
 
               </img>
 
@@ -33,8 +40,10 @@ class Header extends React.Component {
             />
           </div>
           {this.state.open && (
+            
             <div className="dropdown">
-              <ul>
+              <img src="./img/ic_close.png" className="menu_close" onClick={this.handleButtonClick}></img> 
+              <ul className="dropdown ul">
                 <li><a href="#">list1</a></li>
                 <li><a href="#">list2</a></li>
                 <li><a href="#">list3</a></li>
