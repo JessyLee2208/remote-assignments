@@ -75,7 +75,7 @@ class ContentBox extends React.Component {
             <li>
               <p className='codepentitle show' >Assignment 1: Callback Function</p>
               <img src="./img/Assignment1.png"></img>
-              <a href="https://codepen.io/jessylee2208/pen/rNWbjdE" >點我去codePen</a>
+              <a href="https://codepen.io/jessylee2208/pen/BaQEpKZ" >點我去codePen</a>
             </li>
             <li>
               <p className='codepentitle show'>Assignment 2: Callback Function and Advanced HTML DOM</p>
